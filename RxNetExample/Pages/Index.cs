@@ -18,7 +18,12 @@ namespace RxNetExample.Pages
         /// <summary>
         /// The subject that will emit event. It's static, it's preserved between navigation.
         /// </summary>
-        private static readonly ReplaySubject<(int, int)> subject = new ReplaySubject<(int, int)>();
+        private static readonly ReplaySubject<(int, int)> subject = new ReplaySubject<(int, int)>(100);
+
+        /// <summary>
+        /// Event counter.
+        /// </summary>
+        private static int eventCounter = 0;
 
         /// <summary>
         /// The timer that randomly emits integers.
@@ -30,10 +35,6 @@ namespace RxNetExample.Pages
         /// </summary>
         private IDisposable subscription;
 
-        /// <summary>
-        /// Event counter.
-        /// </summary>
-        private int eventCounter = 0;
 
         /// <summary>
         /// Screen buffer.
