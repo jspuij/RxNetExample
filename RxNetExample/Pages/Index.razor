@@ -5,3 +5,19 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+@if (this.screenbuffer != null)
+{
+    <table>
+        <thead>
+            <tr>
+                <td>Index</td>
+                <td>Value</td>
+            </tr>
+        </thead>
+        @foreach ((int index, int value) in this.screenbuffer)
+        {
+            <tr><td>@index</td><td>@value</td></tr>
+        }
+    </table>
+}
