@@ -17,8 +17,9 @@ namespace RxNetExample.Pages
 
         /// <summary>
         /// The subject that will emit event. It's static, it's preserved between navigation.
+        /// Replay size is 10 items.
         /// </summary>
-        private static readonly ReplaySubject<(int, int)> subject = new ReplaySubject<(int, int)>(100);
+        private static readonly ReplaySubject<(int, int)> subject = new ReplaySubject<(int, int)>(10);
 
         /// <summary>
         /// Event counter.
